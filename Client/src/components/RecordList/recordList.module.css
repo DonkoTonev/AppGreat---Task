@@ -1,0 +1,118 @@
+:root {
+  --primary-color: #007bff;
+  --danger-color: #E53935;
+  --hover-effect-scale: scale(1.05);
+  --hover-effect-translate: translateY(-5px);
+  --shadow-normal: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --border-radius: 15px; 
+  --transition-speed: 0.3s; 
+}
+
+.container {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  overflow-y: auto;
+  background-color: #f0f0f0;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  justify-items: center;
+}
+
+li {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-normal);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-color var(--transition-speed) ease;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+li:hover {
+  transform: var(--hover-effect-translate) var(--hover-effect-scale);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-color);
+}
+
+.noteContent {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  overflow-y: auto;
+  max-height: 150px;
+  padding: 10px;
+  font-size: 1.2rem; 
+  color: #333;
+  margin: 0 10px;
+  text-align: justify;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.noteContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.noteContent::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.noteContent::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.noteContent::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.button {
+  margin: 5px; 
+  width: auto;
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity var(--transition-speed), background-color var(--transition-speed);
+  font-weight: bold;
+}
+
+.editButton {
+  background-color: var(--primary-color);
+}
+
+.deleteButton {
+  background-color: var(--danger-color);
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.noNotesMessage {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #6c757d;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-weight: 300;
+}

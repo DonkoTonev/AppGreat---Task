@@ -18,6 +18,7 @@ To set up the front-end part of the project, follow these steps:
 ```bash
 cd Client
 npm install
+npm run dev
 ```
 
 
